@@ -1,6 +1,28 @@
 // Reemplaza esta URL por el link real del APK (por ejemplo, un release de GitHub o un archivo en /public)
 const APK_URL = "https://raw.githubusercontent.com/ANDRESDLRG2007/Division-grupal/main/apk-unisplit.apk";
 
+// ─── Scroll-reveal: activa [data-animate] al entrar al viewport ───────────────
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target); // solo se anima una vez
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+document.querySelectorAll("[data-animate]").forEach((el) => revealObserver.observe(el));
+
+// ─── Header: sombra al hacer scroll ──────────────────────────────────────────
+const headerEl = document.querySelector(".header");
+window.addEventListener(
+  "scroll",
+  () => headerEl.classList.toggle("is-scrolled", window.scrollY > 8),
+  { passive: true }
+);
+
 // --- Acordeón de preguntas frecuentes ---
 document.querySelectorAll(".faq-item__question").forEach((button) => {
   button.addEventListener("click", () => {
@@ -57,6 +79,45 @@ function exportarUsuariosJSON() {
 window.exportarUsuariosJSON = exportarUsuariosJSON;
 
 const downloadForm = document.getElementById("download-form");
+const modal        = document.getElementById("modal-descarga");
+const modalCerrar  = document.getElementById("modal-cerrar");
+const modalLink    = document.getElementById("modal-link-directo");
+
+/** Abre el modal y mueve el foco al botón de cierre */
+function abrirModal() {
+  modal.removeAttribute("hidden");
+  document.body.style.overflow = "hidden"; // evita scroll de fondo
+  modalCerrar.focus();
+}
+
+/** Cierra el modal y devuelve el foco al formulario */
+function cerrarModal() {
+  modal.setAttribute("hidden", "");
+  document.body.style.overflow = "";
+  downloadForm.querySelector("button[type='submit']").focus();
+}
+
+// Cerrar con el botón "Entendido"
+modalCerrar.addEventListener("click", cerrarModal);
+
+// Cerrar al hacer clic en el fondo oscuro (fuera de .modal-box)
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) cerrarModal();
+});
+
+// Cerrar con Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !modal.hasAttribute("hidden")) cerrarModal();
+});
+
+// Enlace directo de respaldo dentro del modal
+if (modalLink) {
+  modalLink.href = APK_URL;
+  modalLink.setAttribute("download", "");
+  modalLink.addEventListener("click", () => {
+    setTimeout(cerrarModal, 400);
+  });
+}
 
 downloadForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -75,4 +136,7 @@ downloadForm.addEventListener("submit", (event) => {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  // Muestra el modal de agradecimiento
+  abrirModal();
 });
