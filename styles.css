@@ -123,7 +123,7 @@ a {
 }
 
 .logo-img {
-  height: 88px;
+  height: 108px;
   width: auto;
   display: block;
   /* align-items: center del flex padre ya lo centra — no necesita margin manual */
