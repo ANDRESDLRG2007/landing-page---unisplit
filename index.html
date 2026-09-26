@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniSplit — Divide los gastos del parche sin complicarte</title>
+<meta name="description" content="UniSplit divide los gastos de salidas y del apartamento entre roomies y amigos. Sin cuentas, sin líos. Descárgala gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#" class="logo" aria-label="UniSplit — Inicio">
+      <img src="logo parado.svg" class="logo-img" alt="UniSplit">
+    </a>
+    <nav class="nav">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#descarga" class="btn btn--sm btn--green">Descargar gratis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <span class="badge">Hecho por y para universitarios</span>
+        <h1>Cuentas claras entre roomies, parches y una ruleta que decide.</h1>
+        <p>UniSplit divide el arriendo, los servicios y las salidas del parche — y cuando nadie quiere pagar, deja que la ruleta elija por ustedes.</p>
+        <div class="hero__actions">
+          <a href="#descarga" class="btn btn--green">Descargar UniSplit gratis</a>
+          <a href="#beneficios" class="link-arrow">Ver cómo funciona →</a>
+        </div>
+      </div>
+
+      <div class="hero__card" id="descarga">
+        <div class="hero__card-eyebrow">Descarga gratis</div>
+        <div class="hero__card-title">Empieza a dividir la próxima salida</div>
+        <form id="download-form" class="download-form">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Ana María Roomie" required>
+          <label for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" placeholder="ana@uniagustiniana.edu.co" required>
+          <button type="submit" class="btn btn--lime btn--block">Descargar APK</button>
+        </form>
+        <p class="hero__card-note">Sin cuentas ni contraseñas · funciona en tu celular</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <div class="section-head">
+        <h2>Todo lo que necesitas para no pelear por plata</h2>
+        <p>Tres formas de mantener las cuentas claras, sin hojas de cálculo ni conversaciones incómodas.</p>
+      </div>
+      <div class="benefits__grid">
+        <article class="benefit-card">
+          <div class="benefit-card__icon benefit-card__icon--green">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>Gastos de apartamento</h3>
+          <p>Arriendo, wifi, mercado y aseo divididos entre roomies, con un algoritmo que calcula las mínimas transferencias para quedar en paz y salvo.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-card__icon benefit-card__icon--orange">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Salidas grupales</h3>
+          <p>Divide pizza, cervezas, transporte o cine del parche al instante, sin tener que hacer cuentas de cabeza al final de la noche.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-card__icon benefit-card__icon--lime">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+              <path d="M12 12 L16.24 7.76"/>
+              <path d="M12 12 L7.76 16.24"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3>Ruleta universitaria</h3>
+          <p>¿Quién paga o quién lava la loza? La ruleta decide con sonido, confeti y un ganador cada vez.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2>¿Quién paga la próxima salida? Que lo decida la ruleta.</h2>
+      <p>Divide la pizza, las cervezas o el Uber del parche en segundos, sin hacer cuentas de cabeza al final de la noche.</p>
+      <a href="#descarga" class="btn btn--green">Descargar UniSplit gratis</a>
+      <div class="cta__fineprint">Gratis para siempre · Sin cuentas ni tarjetas</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container container--narrow">
+      <h2 class="faq__title">Preguntas frecuentes</h2>
+      <div class="faq__list">
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            ¿Necesito crear una cuenta para usar UniSplit?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>No. UniSplit funciona directamente en tu celular y guarda tus grupos, gastos y saldos en el dispositivo, sin registros ni contraseñas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            ¿Sirve solo para salidas o también para el apartamento?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Sirve para las dos cosas. El modo "El parche" está pensado para salidas puntuales, y el modo "Apartamento" para gastos fijos como arriendo y servicios entre roomies.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            ¿Cómo decide la ruleta quién paga?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Escoge al azar entre los participantes de la salida o el gasto, con sonido y confeti al final. También puedes usarla para repartir tareas o retos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            ¿En qué celulares funciona?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Por ahora está disponible como aplicación para Android, descargable directamente desde esta página.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            ¿Mis datos están seguros?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Sí. Como todo se guarda en tu propio celular, nadie más tiene acceso a tus gastos ni a los de tu grupo.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <div class="logo logo--footer">
+        <img src="logo parado.svg" class="logo-img logo-img--footer" alt="UniSplit">
+      </div>
+      <p>Cuentas claras entre roomies y parches. Proyecto académico — Universitaria Agustiniana.</p>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-title">Producto</span>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#descarga">Descargar</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-title">Contacto</span>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+  <div class="container footer__copy">© 2026 UniSplit. Todos los derechos reservados.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
