@@ -151,11 +151,43 @@ a {
 
 /* Hero */
 .hero {
-  background: var(--azul-noche);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(55% 80% at 12% 15%, rgba(78, 194, 110, 0.35), transparent 60%),
+    radial-gradient(45% 70% at 88% 25%, rgba(210, 242, 94, 0.18), transparent 60%),
+    radial-gradient(60% 80% at 50% 115%, rgba(242, 168, 29, 0.20), transparent 60%),
+    var(--azul-noche);
   color: var(--blanco);
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(1000px, 140vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--verde) 0 60deg,
+    var(--lima) 60deg 120deg,
+    var(--naranja) 120deg 180deg,
+    var(--verde) 180deg 240deg,
+    var(--lima) 240deg 300deg,
+    var(--naranja) 300deg 360deg
+  );
+  -webkit-mask: radial-gradient(circle, transparent 28%, #000 29%);
+  mask: radial-gradient(circle, transparent 28%, #000 29%);
+  opacity: 0.13;
+  transform: translate(-50%, -50%);
+  animation: girar-ruleta 60s linear infinite;
+  pointer-events: none;
+}
+
 .hero__inner {
+  position: relative;
+  z-index: 1;
   padding: 88px 24px;
 }
 
@@ -214,6 +246,18 @@ a {
 
 .hero__actions .link-arrow:hover {
   color: var(--lima);
+}
+
+@keyframes girar-ruleta {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+  }
 }
 
 /* Benefits */
