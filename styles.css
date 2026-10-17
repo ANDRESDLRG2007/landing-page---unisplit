@@ -151,22 +151,22 @@ a {
 
 /* Hero */
 .hero {
-  background: var(--blanco);
+  background: var(--azul-noche);
+  color: var(--blanco);
 }
 
 .hero__inner {
   padding: 88px 24px;
-  display: flex;
-  align-items: center;
-  gap: 64px;
-  flex-wrap: wrap;
 }
 
 .hero__copy {
-  flex: 1 1 420px;
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  align-items: center;
+  text-align: center;
 }
 
 .badge {
@@ -176,6 +176,12 @@ a {
   padding: 8px 16px;
   font-size: 13px;
   font-weight: 700;
+}
+
+.hero .badge {
+  align-self: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--lima);
 }
 
 .hero__copy h1 {
@@ -190,82 +196,24 @@ a {
   font-size: 18px;
   line-height: 1.6;
   opacity: 0.75;
-  max-width: 480px;
+  max-width: 680px;
 }
 
 .hero__actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   margin-top: 8px;
   flex-wrap: wrap;
 }
 
-.hero__card {
-  flex: 0 1 380px;
-  background: var(--azul-noche);
+.hero__actions .link-arrow {
   color: var(--blanco);
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 24px 48px rgba(16, 14, 64, 0.18);
 }
 
-/* Float wrapper — separate layer so it doesn't fight entrance opacity */
-.hero__card-float {
-  animation: floatBob 5s ease-in-out 1s infinite;
-}
-
-.hero__card-eyebrow {
-  font-size: 15px;
-  font-weight: 700;
-  opacity: 0.7;
-  margin-bottom: 4px;
-}
-
-.hero__card-title {
+.hero__actions .link-arrow:hover {
   color: var(--lima);
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.download-form {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.download-form label {
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.7;
-  margin-top: 10px;
-}
-
-.download-form input {
-  background: var(--blanco);
-  border: none;
-  border-radius: 10px;
-  padding: 13px 14px;
-  font-size: 14px;
-  font-family: var(--font-body);
-  color: var(--azul-noche);
-}
-
-.download-form input::placeholder {
-  color: var(--azul-noche);
-  opacity: 0.4;
-}
-
-.download-form .btn {
-  margin-top: 18px;
-}
-
-.hero__card-note {
-  text-align: center;
-  font-size: 12px;
-  opacity: 0.45;
-  margin-top: 10px;
 }
 
 /* Benefits */
@@ -388,51 +336,73 @@ a {
   opacity: 0.5;
 }
 
-/* HubSpot contact form */
-.contact {
+/* HubSpot signup section */
+.signup {
   background: var(--gris);
-  padding: 80px 0;
+  padding: 88px 0;
 }
 
-.contact__inner {
+.signup__inner {
+  max-width: 1120px;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
   gap: 64px;
 }
 
-.contact__copy {
-  max-width: 420px;
+.signup__intro {
+  max-width: 440px;
 }
 
-.contact__eyebrow {
+.signup__logo {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+  margin: 0 0 28px;
+}
+
+.signup__eyebrow {
   display: inline-block;
+  margin-bottom: 12px;
   color: var(--verde-hover);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
-.contact__copy h2 {
-  margin: 0 0 14px;
+.signup__intro h2 {
+  margin: 0 0 12px;
   font-size: 36px;
   line-height: 1.15;
 }
 
-.contact__copy p {
+.signup__intro p {
   margin: 0;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
   opacity: 0.72;
 }
 
-.contact__panel {
+.signup__panel {
   min-width: 0;
-  padding: 24px;
+  padding: 32px;
   background: var(--blanco);
+  border: 1px solid rgba(16, 14, 64, 0.08);
   border-radius: 20px;
   box-shadow: 0 18px 42px rgba(16, 14, 64, 0.08);
+}
+
+.signup--submitted .signup__intro {
+  display: none;
+}
+
+.signup--submitted .signup__inner {
+  display: block;
+  max-width: 820px;
+}
+
+.signup--submitted .signup__panel {
+  margin: 0 auto;
 }
 
 .hs-form-frame {
@@ -677,107 +647,8 @@ a {
 /* Scroll offset: compensa el header sticky (92 px) para que la sección quede centrada */
 #beneficios,
 #faq,
-#descarga {
+#formulario {
   scroll-margin-top: 100px;
-}
-
-/* ===================== MODAL DE DESCARGA ===================== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(10, 8, 48, 0.72);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  /* Animación de entrada */
-  animation: modalFadeIn 0.25s ease both;
-}
-
-.modal-overlay[hidden] {
-  display: none;
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.modal-box {
-  background: #FFFFFF;
-  border-radius: 24px;
-  padding: 40px 36px 36px;
-  max-width: 440px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 24px 64px rgba(10, 8, 48, 0.32);
-  animation: modalSlideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-
-@keyframes modalSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.modal-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 20px;
-}
-
-.modal-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.modal-title {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--azul-noche);
-  margin: 0 0 12px;
-  line-height: 1.25;
-}
-
-.modal-body {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--azul-noche);
-  opacity: 0.75;
-  margin: 0 0 10px;
-}
-
-.modal-note {
-  font-size: 13.5px;
-  color: var(--azul-noche);
-  opacity: 0.5;
-  margin: 0 0 28px;
-}
-
-.modal-link {
-  color: var(--verde);
-  font-weight: 600;
-  text-decoration: underline;
-  opacity: 1;
-}
-
-.modal-btn {
-  margin-top: 0;
-  font-size: 15px;
 }
 
 /* Responsive */
@@ -794,32 +665,163 @@ a {
     font-size: 36px;
   }
 
-  .benefits__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact {
+  .signup {
     padding: 64px 0;
   }
 
-  .contact__inner {
+  .signup__inner {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 32px;
   }
 
-  .contact__copy h2 {
+  .signup__intro {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .signup__logo {
+    margin: 0 auto 24px;
+  }
+
+  .signup__intro h2 {
     font-size: 30px;
   }
 
-  .contact__panel {
-    padding: 18px;
+  .signup__panel {
+    padding: 22px 18px;
+  }
+
+  .benefits__grid {
+    grid-template-columns: 1fr;
   }
 
   .footer__inner {
     flex-direction: column;
   }
+}
 
-  .modal-box {
-    padding: 32px 24px 28px;
+/* HubSpot form inside the signup section */
+#hubspot-form label,
+#hubspot-form legend {
+  color: var(--azul-noche) !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+#hubspot-form .hs-form-field,
+#hubspot-form .hsfc-FieldLayout {
+  margin-bottom: 14px !important;
+}
+
+#hubspot-form .hs-input,
+#hubspot-form .hsfc-TextInput,
+#hubspot-form input[type="text"],
+#hubspot-form input[type="email"],
+#hubspot-form input[type="tel"] {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: #f7f8fa !important;
+  border: 1px solid rgba(16, 14, 64, 0.18) !important;
+  border-radius: 10px !important;
+  padding: 13px 14px !important;
+  font-size: 14px !important;
+  color: #100E40 !important;
+}
+
+#hubspot-form .hs-button,
+#hubspot-form .hsfc-Button,
+#hubspot-form input[type="submit"] {
+  width: 100% !important;
+  background: #D2F25E !important;
+  color: #100E40 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  font-family: 'Baloo 2', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+}
+
+#hubspot-form .hs-button:hover,
+#hubspot-form .hsfc-Button:hover {
+  background: #C3E64C !important;
+}
+
+#hubspot-form .hs-error-msg,
+#hubspot-form .hs-error-msgs label {
+  color: #b42318 !important;
+}
+
+.download-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(16, 14, 64, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.download-modal[hidden] {
+  display: none;
+}
+
+.download-modal__dialog {
+  width: min(100%, 460px);
+  padding: 36px 32px;
+  background: var(--blanco);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(10, 8, 48, 0.32);
+  animation: modalFadeIn 0.25s ease both;
+}
+
+.download-modal__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+}
+
+.download-modal__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.download-modal__dialog h2 {
+  margin: 0 0 12px;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.download-modal__dialog p {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .download-modal__dialog {
+    padding: 32px 24px;
+  }
+
+  .download-modal__dialog h2 {
+    font-size: 23px;
   }
 }

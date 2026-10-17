@@ -1,5 +1,29 @@
-// Reemplaza esta URL por el link real del APK (por ejemplo, un release de GitHub o un archivo en /public)
 const APK_URL = "https://raw.githubusercontent.com/ANDRESDLRG2007/Division-grupal/main/apk-unisplit.apk";
+const downloadModal = document.getElementById("download-modal");
+const downloadModalClose = document.getElementById("download-modal-close");
+const downloadModalMessage = document.getElementById("download-modal-message");
+
+function closeDownloadModal() {
+  downloadModal.setAttribute("hidden", "");
+  document.body.style.overflow = "";
+}
+
+function openDownloadModal() {
+  downloadModal.removeAttribute("hidden");
+  document.body.style.overflow = "hidden";
+  downloadModalClose.focus();
+}
+
+downloadModalClose.addEventListener("click", closeDownloadModal);
+downloadModal.addEventListener("click", (event) => {
+  if (event.target === downloadModal) closeDownloadModal();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !downloadModal.hasAttribute("hidden")) {
+    closeDownloadModal();
+  }
+});
 
 // ─── Scroll-reveal: activa [data-animate] al entrar al viewport ───────────────
 const revealObserver = new IntersectionObserver(
@@ -14,6 +38,23 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.12 }
 );
 document.querySelectorAll("[data-animate]").forEach((el) => revealObserver.observe(el));
+
+window.addEventListener("hs-form-event:on-submission:success", (event) => {
+  if (event.detail?.formId === "a94d1923-0170-4910-8b1c-b0fee7a1b127") {
+    const signup = document.querySelector(".signup");
+    if (signup?.classList.contains("signup--submitted")) return;
+    signup?.classList.add("signup--submitted");
+
+    downloadModalMessage.textContent = APK_URL
+      ? "La descarga de UniSplit está comenzando. ¡Que disfrutes la app!"
+      : "Recibimos tus datos. Te avisaremos cuando UniSplit esté disponible. ¡Gracias por tu interés!";
+    openDownloadModal();
+
+    if (APK_URL) {
+      window.setTimeout(() => window.location.assign(APK_URL), 400);
+    }
+  }
+});
 
 // ─── Header: sombra al hacer scroll ──────────────────────────────────────────
 const headerEl = document.querySelector(".header");
@@ -40,103 +81,4 @@ document.querySelectorAll(".faq-item__question").forEach((button) => {
       button.setAttribute("aria-expanded", "true");
     }
   });
-});
-
-// --- Formulario de descarga ---
-// El sitio es estático (sin backend), así que no hay dónde guardar un .json en un
-// servidor. Lo que sí podemos hacer es guardar cada registro en localStorage, en el
-// mismo formato en JSON que usarías si más adelante conectas un backend o agregas
-// inicio de sesión: un arreglo de objetos {nombre, correo, fecha}.
-const USUARIOS_KEY = "unisplit_usuarios";
-
-function guardarUsuario(nombre, correo) {
-  const usuarios = JSON.parse(localStorage.getItem(USUARIOS_KEY) || "[]");
-
-  // Evita duplicar el mismo correo si ya se había registrado antes
-  const yaExiste = usuarios.some((u) => u.correo.toLowerCase() === correo.toLowerCase());
-  if (!yaExiste) {
-    usuarios.push({ nombre, correo, fecha: new Date().toISOString() });
-    localStorage.setItem(USUARIOS_KEY, JSON.stringify(usuarios));
-  }
-
-  return usuarios;
-}
-
-// Útil para revisar los registros guardados desde la consola del navegador,
-// o para exportarlos manualmente mientras no haya backend.
-function exportarUsuariosJSON() {
-  const data = localStorage.getItem(USUARIOS_KEY) || "[]";
-  const blob = new Blob([data], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "unisplit_usuarios.json";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
-}
-window.exportarUsuariosJSON = exportarUsuariosJSON;
-
-const downloadForm = document.getElementById("download-form");
-const modal        = document.getElementById("modal-descarga");
-const modalCerrar  = document.getElementById("modal-cerrar");
-const modalLink    = document.getElementById("modal-link-directo");
-
-/** Abre el modal y mueve el foco al botón de cierre */
-function abrirModal() {
-  modal.removeAttribute("hidden");
-  document.body.style.overflow = "hidden"; // evita scroll de fondo
-  modalCerrar.focus();
-}
-
-/** Cierra el modal y devuelve el foco al formulario */
-function cerrarModal() {
-  modal.setAttribute("hidden", "");
-  document.body.style.overflow = "";
-  downloadForm.querySelector("button[type='submit']").focus();
-}
-
-// Cerrar con el botón "Entendido"
-modalCerrar.addEventListener("click", cerrarModal);
-
-// Cerrar al hacer clic en el fondo oscuro (fuera de .modal-box)
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) cerrarModal();
-});
-
-// Cerrar con Escape
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !modal.hasAttribute("hidden")) cerrarModal();
-});
-
-// Enlace directo de respaldo dentro del modal
-if (modalLink) {
-  modalLink.href = APK_URL;
-  modalLink.setAttribute("download", "");
-  modalLink.addEventListener("click", () => {
-    setTimeout(cerrarModal, 400);
-  });
-}
-
-downloadForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const nombre = downloadForm.nombre.value.trim();
-  const correo = downloadForm.correo.value.trim();
-
-  if (!nombre || !correo) return;
-
-  guardarUsuario(nombre, correo);
-
-  // Dispara la descarga del APK
-  const link = document.createElement("a");
-  link.href = APK_URL;
-  link.download = "";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  // Muestra el modal de agradecimiento
-  abrirModal();
 });
