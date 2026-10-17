@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="es">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,8 +10,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WFJHMZXH');</script>
 <!-- End Google Tag Manager -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UniSplit — Divide los gastos del parche sin complicarte</title>
 <meta name="description" content="UniSplit divide los gastos de salidas y del apartamento entre roomies y amigos. Sin cuentas, sin líos. Descárgala gratis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main>
 
-  <!-- HERO -->
+  <!-- 1. HERO -->
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__copy">
@@ -47,13 +47,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>UniSplit divide el arriendo, los servicios y las salidas del parche — y cuando nadie quiere pagar, deja que la ruleta elija por ustedes.</p>
         <div class="hero__actions">
           <a href="#formulario" id="btn-cta-principal" class="btn btn--green">Descargar UniSplit gratis</a>
+          <!-- Cuando exista la sección Explicación, cambiar este href a #como-funciona -->
           <a href="#beneficios" class="link-arrow">Ver cómo funciona →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFICIOS -->
+  <!-- 2. BENEFICIOS -->
   <section class="benefits" id="beneficios">
     <div class="container">
       <div class="section-head" data-animate>
@@ -103,17 +104,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 3. CTA -->
   <section class="cta">
     <div class="container cta__inner" data-animate>
       <h2>¿Quién paga la próxima salida? Que lo decida la ruleta.</h2>
       <p>Divide la pizza, las cervezas o el Uber del parche en segundos, sin hacer cuentas de cabeza al final de la noche.</p>
-      <a href="#formulario" class="btn btn--green">Descargar UniSplit gratis</a>
+      <a href="#formulario" id="btn-cta-final" class="btn btn--green">Descargar UniSplit gratis</a>
       <div class="cta__fineprint">Gratis para siempre · Sin cuentas ni tarjetas</div>
     </div>
   </section>
 
-  <!-- REGISTRO DE ACCESO ANTICIPADO -->
+  <!-- 4. EXPLICACIÓN / INTRO  (PENDIENTE — Andriu)
+       Va aquí, con id="como-funciona". Pasos: crear grupo → agregar gasto → ver quién paga. -->
+
+  <!-- 5. TESTIMONIOS / SOCIAL PROOF  (PENDIENTE — Andriu)
+       Va aquí. Usar frases reales de personas que hayan probado la app. -->
+
+  <!-- 6. CTA 2 = sección del formulario HubSpot.
+       Se deja aquí, después de Explicación y Testimonios, para cumplir el orden de la rúbrica.
+       NO tocar el id="formulario", el div del formulario ni los scripts de HubSpot. -->
   <section class="signup" id="formulario">
     <div class="container signup__inner">
       <div class="signup__intro">
@@ -129,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- 7. FAQ -->
   <section class="faq" id="faq">
     <div class="container container--narrow">
       <h2 class="faq__title" data-animate>Preguntas frecuentes</h2>
@@ -189,8 +198,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- 8. PRE-FOOTER  (PENDIENTE — Andriu)
+       Va aquí, entre el FAQ y el footer: franja corta con texto + redes/contacto. -->
+
 </main>
 
+<!-- 9. FOOTER -->
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
@@ -228,6 +241,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button id="download-modal-close" class="btn btn--green" type="button">Entendido</button>
   </div>
 </div>
+
+<!-- Aviso a GTM cuando HubSpot confirma el envío del formulario (evento 5: formulario_enviado).
+     Solo empuja al dataLayer; no descarga nada, así que no choca con lo que ya hace script.js. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.addEventListener('hs-form-event:on-submission:success', function () {
+    window.dataLayer.push({ event: 'formulario_enviado' });
+  });
+</script>
 
 <script src="script.js"></script>
 </body>
