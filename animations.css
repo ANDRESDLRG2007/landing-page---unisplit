@@ -1,0 +1,35 @@
+.header {
+  background: var(--blanco);
+}
+
+.header .nav a:not(.btn),
+.header .nav a:not(.btn):hover {
+  color: var(--azul-noche);
+}
+
+.header .btn--green {
+  color: var(--azul-noche);
+}
+
+.cta {
+  background: var(--lima);
+  color: var(--azul-noche);
+}
+
+.cta .btn {
+  background: var(--azul-noche);
+  color: var(--blanco);
+}
+
+.cta .btn:hover {
+  background: #0B0930;
+}
+
+.cta .cta__fineprint {
+  opacity: 1;
+}
+
+.signup {
+  background: var(--azul-noche);
+  color: var(--blanco);
+}
