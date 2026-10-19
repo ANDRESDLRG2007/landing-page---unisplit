@@ -47,8 +47,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>UniSplit divide el arriendo, los servicios y las salidas del parche — y cuando nadie quiere pagar, deja que la ruleta elija por ustedes.</p>
         <div class="hero__actions">
           <a href="#formulario" id="btn-cta-principal" class="btn btn--green">Descargar UniSplit gratis</a>
-          <!-- Cuando exista la sección Explicación, cambiar este href a #como-funciona -->
-          <a href="#beneficios" class="link-arrow">Ver cómo funciona →</a>
+          <a href="#como-funciona" class="link-arrow">Ver cómo funciona →</a>
         </div>
       </div>
     </div>
@@ -114,11 +113,107 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- 4. EXPLICACIÓN / INTRO  (PENDIENTE — Andriu)
-       Va aquí, con id="como-funciona". Pasos: crear grupo → agregar gasto → ver quién paga. -->
+  <!-- 4. EXPLICACIÓN / CÓMO FUNCIONA -->
+  <section class="howto" id="como-funciona">
+    <div class="container">
+      <div class="section-head" data-animate>
+        <span class="howto__eyebrow">Cómo funciona</span>
+        <h2>Así de fácil funciona UniSplit</h2>
+        <p>Tres pasos y las cuentas quedan claras, sin hojas de cálculo ni mensajes incómodos.</p>
+      </div>
 
-  <!-- 5. TESTIMONIOS / SOCIAL PROOF  (PENDIENTE — Andriu)
-       Va aquí. Usar frases reales de personas que hayan probado la app. -->
+      <ol class="quick-steps">
+        <li class="quick-step" data-animate>
+          <span class="quick-step__num">1</span>
+          <div><h3>Crea tu grupo</h3><p>Suma a tus amigos o roomies. Sin registros.</p></div>
+        </li>
+        <li class="quick-step" data-animate data-delay="1">
+          <span class="quick-step__num">2</span>
+          <div><h3>Agrega un gasto</h3><p>Pizza, polas o taxi: UniSplit lo reparte.</p></div>
+        </li>
+        <li class="quick-step" data-animate data-delay="2">
+          <span class="quick-step__num">3</span>
+          <div><h3>Mira quién paga</h3><p>Transferencias mínimas, o que decida la ruleta.</p></div>
+        </li>
+      </ol>
+
+      <!-- Carrusel automático de pantallas. Lo controla showcase.js -->
+      <div class="showcase" data-showcase data-animate>
+        <div class="showcase__stage">
+          <div class="showcase__glow" aria-hidden="true"></div>
+          <span class="showcase__chip showcase__chip--a" aria-hidden="true">🎡 ¡Gira la ruleta!</span>
+          <span class="showcase__chip showcase__chip--b" aria-hidden="true">✅ Cuentas claras</span>
+          <div class="showcase__phone">
+            <div class="showcase__screen">
+              <img class="showcase__shot is-active" src="assets/app-salidas.jpg" width="640" height="1430" alt="Pantalla Salidas de UniSplit: total del parche, botón Dividir una Cuenta, integrantes y consumos registrados">
+              <img class="showcase__shot" src="assets/app-balances.jpg" width="640" height="1430" loading="lazy" alt="Pantalla Balances de UniSplit: total de salidas, por liquidar, transferencias pendientes y consumo por amigo">
+              <img class="showcase__shot" src="assets/app-ruleta.jpg" width="640" height="1430" loading="lazy" alt="Pantalla Ruleta universitaria de UniSplit con cuatro participantes y el botón Girar ruleta">
+              <img class="showcase__shot" src="assets/app-roomies.jpg" width="640" height="1430" loading="lazy" alt="Pantalla Roomies de UniSplit: gastos de apartamento, roomies y historial de gastos">
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase__tabs" role="tablist" aria-label="Pantallas de la app">
+          <button class="showcase__tab is-active" type="button" role="tab" aria-selected="true">
+            <span class="showcase__head"><span class="showcase__emoji" aria-hidden="true">🔥</span><span class="showcase__title">Salidas del parche</span></span>
+            <span class="showcase__body"><span class="showcase__text">Toca <strong>“Dividir una Cuenta”</strong> y registra la comida, las polas o el taxi. El total del parche se actualiza solo, ves a todos los integrantes y, para cuentas grandes, tienes la <strong>Calculadora Mesa</strong>.</span></span>
+            <span class="showcase__bar"></span>
+          </button>
+          <button class="showcase__tab" type="button" role="tab" aria-selected="false">
+            <span class="showcase__head"><span class="showcase__emoji" aria-hidden="true">⚖️</span><span class="showcase__title">Balances: cuentas claras</span></span>
+            <span class="showcase__body"><span class="showcase__text">Mira el total de salidas, cuánto falta <strong>por liquidar</strong> y las <strong>transferencias pendientes</strong>: quién le debe a quién. También ves el consumo total por amigo, con liquidación y cobro por Nequi.</span></span>
+            <span class="showcase__bar"></span>
+          </button>
+          <button class="showcase__tab" type="button" role="tab" aria-selected="false">
+            <span class="showcase__head"><span class="showcase__emoji" aria-hidden="true">🎰</span><span class="showcase__title">Ruleta universitaria</span></span>
+            <span class="showcase__body"><span class="showcase__text">¿Nadie quiere pagar? Elige entre <strong>Quién paga</strong>, <strong>Castigos</strong> o <strong>Libre</strong>, usa la lista de Salidas o de Roomies y toca <strong>“¡Girar ruleta!”</strong>. La suerte decide.</span></span>
+            <span class="showcase__bar"></span>
+          </button>
+          <button class="showcase__tab" type="button" role="tab" aria-selected="false">
+            <span class="showcase__head"><span class="showcase__emoji" aria-hidden="true">🏠</span><span class="showcase__title">Roomies: gastos del apartamento</span></span>
+            <span class="showcase__body"><span class="showcase__text">Registra el arriendo, los servicios y el mercado con <strong>“Registrar Gasto”</strong>. Ves el total del mes, a tus roomies y el historial de gastos en un solo lugar.</span></span>
+            <span class="showcase__bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="howto__cta" data-animate>
+        <a href="#formulario" class="btn btn--lime">Quiero probarla</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TESTIMONIOS (citas reales de usuarios que probaron la app, publicadas con su nombre de pila) -->
+  <section class="testimonials" id="testimonios">
+    <div class="container">
+      <div class="section-head" data-animate>
+        <h2>Lo que dicen quienes ya la probaron</h2>
+        <p>Opiniones de universitarios que usaron UniSplit.</p>
+      </div>
+      <div class="testimonials__grid">
+        <figure class="testimonial-card" data-animate>
+          <span class="testimonial-card__mark" aria-hidden="true">“</span>
+          <blockquote>Muy buena, la voy a usar en todas mis salidas con amigos</blockquote>
+          <figcaption><span class="testimonial-card__avatar" aria-hidden="true">L</span>Laura</figcaption>
+        </figure>
+        <figure class="testimonial-card" data-animate data-delay="1">
+          <span class="testimonial-card__mark" aria-hidden="true">“</span>
+          <blockquote>La voy a recomendar con mis amigos, es muy útil jajaja</blockquote>
+          <figcaption><span class="testimonial-card__avatar" aria-hidden="true">J</span>Juan</figcaption>
+        </figure>
+        <figure class="testimonial-card" data-animate data-delay="2">
+          <span class="testimonial-card__mark" aria-hidden="true">“</span>
+          <blockquote>La ruleta es lo mejooor</blockquote>
+          <figcaption><span class="testimonial-card__avatar" aria-hidden="true">P</span>Pablo</figcaption>
+        </figure>
+        <figure class="testimonial-card" data-animate data-delay="1">
+          <span class="testimonial-card__mark" aria-hidden="true">“</span>
+          <blockquote>Esta muy bien que no sea solo para salidas, me gusto mucho</blockquote>
+          <figcaption><span class="testimonial-card__avatar" aria-hidden="true">D</span>Daniela</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <!-- 6. CTA 2 = sección del formulario HubSpot.
        Se deja aquí, después de Explicación y Testimonios, para cumplir el orden de la rúbrica.
@@ -198,8 +293,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- 8. PRE-FOOTER  (PENDIENTE — Andriu)
-       Va aquí, entre el FAQ y el footer: franja corta con texto + redes/contacto. -->
+  <!-- 8. PRE-FOOTER -->
+  <section class="prefooter" id="prefooter">
+    <div class="container prefooter__inner" data-animate>
+      <p class="prefooter__text">¿Dudas o ideas? Escríbenos, nos encanta leer a quienes usan UniSplit.</p>
+      <div class="prefooter__links">
+        <!-- Cambia los href="#" por tus enlaces reales -->
+        <a href="#" class="prefooter__icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="prefooter__icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-.8-.4-1.6-1.2-2-2l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="prefooter__icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
@@ -252,5 +363,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <script src="script.js"></script>
+<script src="showcase.js"></script>
 </body>
 </html>
