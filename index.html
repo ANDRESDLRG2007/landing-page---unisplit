@@ -3,21 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100E40">
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>(function(w,d,s,l,i){function load(){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}
+function schedule(){if(w.requestIdleCallback){w.requestIdleCallback(load,{timeout:3000});}
+else{w.setTimeout(load,1500);}}
+if(d.readyState==='complete'){schedule();}else{w.addEventListener('load',schedule,{once:true});}
 })(window,document,'script','dataLayer','GTM-WFJHMZXH');</script>
 <!-- End Google Tag Manager -->
 <title>UniSplit — Divide los gastos del parche sin complicarte</title>
 <meta name="description" content="UniSplit divide los gastos de salidas y del apartamento entre roomies y amigos. Sin cuentas, sin líos. Descárgala gratis.">
-<link rel="icon" type="image/png" href="assets/Calculadora%20Sonriente%20con%20Monedas.png">
+<link rel="canonical" href="https://andresdlrg2007.github.io/landing-page---unisplit">
+<meta property="og:title" content="UniSplit — Divide los gastos del parche sin complicarte">
+<meta property="og:description" content="Divide arriendo, servicios y salidas entre roomies y amigos. Cuentas claras, sin líos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andresdlrg2007.github.io/landing-page---unisplit">
+<meta property="og:image" content="https://andresdlrg2007.github.io/landing-page---unisplit/assets/og-unisplit.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UniSplit — Divide los gastos del parche sin complicarte">
+<meta name="twitter:description" content="Divide arriendo, servicios y salidas entre roomies y amigos. Cuentas claras, sin líos.">
+<meta name="twitter:image" content="https://andresdlrg2007.github.io/landing-page---unisplit/assets/og-unisplit.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "UniSplit",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Android",
+  "description": "Aplicación para dividir gastos de salidas y del apartamento entre amigos y roomies.",
+  "url": "https://andresdlrg2007.github.io/landing-page---unisplit",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "COP"
+  }
+}
+</script>
+<link rel="icon" type="image/webp" href="assets/calculadora.webp">
+<link rel="preload" as="image" href="assets/logo-header.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="animations.css">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{--azul-noche:#100E40;--verde:#4EC26E;--verde-hover:#3DA85B;--lima:#D2F25E;--naranja:#F2A81D;--gris:#F2F2F2;--blanco:#FFF;--font-display:'Baloo 2',sans-serif;--font-body:'Manrope',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--gris);font-family:var(--font-body);color:var(--azul-noche)}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.logo,.btn{font-family:var(--font-display)}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;padding:16px 28px;border:0;border-radius:12px;cursor:pointer}
+.btn--sm{padding:11px 22px;font-size:14px;border-radius:10px}
+.btn--green{background:var(--verde);color:var(--blanco)}
+.link-arrow{font-size:15px;font-weight:700}
+.header{position:sticky;top:0;z-index:10;background:var(--blanco)}
+.header__inner{height:116px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center}
+.header .logo{padding:6px 10px;border-radius:10px;background:var(--azul-noche)}
+.header .logo-img{display:block;width:auto;height:88px}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a:not(.btn){color:var(--azul-noche);font-size:15px;font-weight:600}
+.header .btn--green{color:var(--azul-noche)}
+.hero{position:relative;overflow:hidden;color:var(--blanco);background:radial-gradient(55% 80% at 12% 15%,rgba(78,194,110,.35),transparent 60%),radial-gradient(45% 70% at 88% 25%,rgba(210,242,94,.18),transparent 60%),radial-gradient(60% 80% at 50% 115%,rgba(242,168,29,.2),transparent 60%),var(--azul-noche)}
+.hero::before{content:"";position:absolute;top:50%;left:50%;width:min(1000px,140vw);aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--verde) 0 60deg,var(--lima) 60deg 120deg,var(--naranja) 120deg 180deg,var(--verde) 180deg 240deg,var(--lima) 240deg 300deg,var(--naranja) 300deg 360deg);-webkit-mask:radial-gradient(circle,transparent 28%,#000 29%);mask:radial-gradient(circle,transparent 28%,#000 29%);opacity:.13;transform:translate(-50%,-50%);animation:girar-ruleta 60s linear infinite;pointer-events:none}
+.hero__inner{position:relative;z-index:1;padding:88px 24px}
+.hero__copy{display:flex;max-width:860px;margin:0 auto;flex-direction:column;align-items:center;gap:24px;text-align:center}
+.badge{align-self:flex-start;border-radius:999px;padding:8px 16px;background:var(--gris);font-size:13px;font-weight:700}
+.hero .badge{align-self:center;background:rgba(255,255,255,.12);color:var(--lima)}
+.hero__copy h1{margin:0;font-size:48px;font-weight:800;line-height:1.12}
+.hero__copy p{max-width:680px;margin:0;font-size:18px;line-height:1.6;opacity:.75}
+.hero__actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;margin-top:8px}
+.hero__actions .link-arrow{color:var(--blanco)}
+@keyframes girar-ruleta{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none}}
+@media(max-width:900px){.nav a:not(.btn){display:none}.hero__inner{padding:56px 24px}.hero__copy h1{font-size:36px}}
+</style>
+<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles.css"></noscript>
+<link rel="preload" href="animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="animations.css"></noscript>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -28,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="header">
   <div class="container header__inner">
     <a href="#" class="logo" aria-label="UniSplit — Inicio">
-      <img src="assets/logo acostado.svg" class="logo-img" alt="UniSplit">
+      <img src="assets/logo-header.webp" class="logo-img" width="960" height="492" fetchpriority="high" alt="UniSplit">
     </a>
     <nav class="nav">
       <a href="#beneficios">Beneficios</a>
@@ -153,10 +223,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </span>
           <div class="showcase__phone">
             <div class="showcase__screen">
-              <img class="showcase__shot is-active" src="assets/app-salidas.jpg" width="640" height="1430" alt="Pantalla Salidas de UniSplit: total del parche, botón Dividir una Cuenta, integrantes y consumos registrados">
-              <img class="showcase__shot" src="assets/app-balances.jpg" width="640" height="1430" loading="lazy" alt="Pantalla Balances de UniSplit: total de salidas, por liquidar, transferencias pendientes y consumo por amigo">
-              <img class="showcase__shot" src="assets/app-ruleta.jpg" width="640" height="1430" loading="lazy" alt="Pantalla Ruleta universitaria de UniSplit con cuatro participantes y el botón Girar ruleta">
-              <img class="showcase__shot" src="assets/app-roomies.jpg" width="640" height="1430" loading="lazy" alt="Pantalla Roomies de UniSplit: gastos de apartamento, roomies y historial de gastos">
+              <img class="showcase__shot is-active" src="assets/app-salidas.webp" width="640" height="1430" loading="lazy" decoding="async" alt="Pantalla Salidas de UniSplit: total del parche, botón Dividir una Cuenta, integrantes y consumos registrados">
+              <img class="showcase__shot" src="assets/app-balances.webp" width="640" height="1430" loading="lazy" decoding="async" alt="Pantalla Balances de UniSplit: total de salidas, por liquidar, transferencias pendientes y consumo por amigo">
+              <img class="showcase__shot" src="assets/app-ruleta.webp" width="640" height="1430" loading="lazy" decoding="async" alt="Pantalla Ruleta universitaria de UniSplit con cuatro participantes y el botón Girar ruleta">
+              <img class="showcase__shot" src="assets/app-roomies.webp" width="640" height="1430" loading="lazy" decoding="async" alt="Pantalla Roomies de UniSplit: gastos de apartamento, roomies y historial de gastos">
             </div>
           </div>
         </div>
@@ -229,7 +299,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="signup" id="formulario">
     <div class="container signup__inner">
       <div class="signup__intro">
-        <img src="assets/letraslogo.png" class="signup__logo" alt="UniSplit">
+        <img src="assets/letraslogo.webp" class="signup__logo" width="1000" height="500" loading="lazy" decoding="async" alt="UniSplit">
         <span class="signup__eyebrow">Acceso anticipado</span>
         <h2>Prueba UniSplit antes que nadie</h2>
         <p>Déjanos tus datos y te avisaremos cuando esté disponible.</p>
@@ -327,7 +397,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container footer__inner">
     <div class="footer__brand">
       <div class="logo logo--footer">
-        <img src="assets/logo acostado header.svg" class="logo-img logo-img--footer" alt="UniSplit">
+        <img src="assets/logo-header.webp" class="logo-img logo-img--footer" width="960" height="492" loading="lazy" decoding="async" alt="UniSplit">
       </div>
       <p>Cuentas claras entre roomies y parches. Proyecto académico — Universitaria Agustiniana.</p>
     </div>
