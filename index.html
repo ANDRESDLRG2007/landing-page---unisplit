@@ -5,14 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#100E40">
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){function load(){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}
-function schedule(){if(w.requestIdleCallback){w.requestIdleCallback(load,{timeout:3000});}
-else{w.setTimeout(load,1500);}}
-if(d.readyState==='complete'){schedule();}else{w.addEventListener('load',schedule,{once:true});}
-})(window,document,'script','dataLayer','GTM-WFJHMZXH');</script>
+<script>
+(function (window, document) {
+  var events = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
+  var requested = false;
+  var loaded = false;
+  var fallbackTimer;
+
+  function injectScripts() {
+    if (loaded) return;
+    loaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+    [
+      'https://www.googletagmanager.com/gtm.js?id=GTM-WFJHMZXH',
+      'https://js.hsforms.net/forms/embed/52180089.js'
+    ].forEach(function (src) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      document.head.appendChild(script);
+    });
+  }
+
+  function requestScripts() {
+    if (requested) return;
+    requested = true;
+    window.clearTimeout(fallbackTimer);
+    events.forEach(function (eventName) {
+      window.removeEventListener(eventName, requestScripts);
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', injectScripts, { once: true });
+    } else {
+      injectScripts();
+    }
+  }
+
+  events.forEach(function (eventName) {
+    window.addEventListener(eventName, requestScripts, { once: true, passive: true });
+  });
+  fallbackTimer = window.setTimeout(requestScripts, 3500);
+})(window, document);
+</script>
 <!-- End Google Tag Manager -->
 <title>UniSplit — Divide los gastos del parche sin complicarte</title>
 <meta name="description" content="UniSplit divide los gastos de salidas y del apartamento entre roomies y amigos. Sin cuentas, sin líos. Descárgala gratis.">
@@ -305,7 +343,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Déjanos tus datos y te avisaremos cuando esté disponible.</p>
       </div>
       <div class="signup__panel" data-animate>
-        <script src="https://js.hsforms.net/forms/embed/52180089.js" defer></script>
         <div id="hubspot-form" class="hs-form-frame" data-region="na1" data-form-id="a94d1923-0170-4910-8b1c-b0fee7a1b127" data-portal-id="52180089"></div>
       </div>
     </div>
