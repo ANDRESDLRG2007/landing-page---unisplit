@@ -5,6 +5,12 @@
   force = true
 
 [[redirects]]
+  from = "http://landingpageunisplit.netlify.app/*"
+  to = "https://landingpageunisplit.netlify.app/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "https://landingpageunisplit.netlify.app/:splat"
   status = 301
@@ -18,6 +24,7 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
 [[headers]]
   for = "/assets/*"

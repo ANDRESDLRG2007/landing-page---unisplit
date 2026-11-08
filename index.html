@@ -4,54 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#100E40">
-<!-- Google Tag Manager -->
-<script>
-(function (window, document) {
-  var events = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
-  var requested = false;
-  var loaded = false;
-  var fallbackTimer;
-
-  function injectScripts() {
-    if (loaded) return;
-    loaded = true;
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-
-    [
-      'https://www.googletagmanager.com/gtm.js?id=GTM-WFJHMZXH',
-      'https://js.hsforms.net/forms/embed/52180089.js'
-    ].forEach(function (src) {
-      var script = document.createElement('script');
-      script.src = src;
-      script.async = true;
-      document.head.appendChild(script);
-    });
-  }
-
-  function requestScripts() {
-    if (requested) return;
-    requested = true;
-    window.clearTimeout(fallbackTimer);
-    events.forEach(function (eventName) {
-      window.removeEventListener(eventName, requestScripts);
-    });
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', injectScripts, { once: true });
-    } else {
-      injectScripts();
-    }
-  }
-
-  events.forEach(function (eventName) {
-    window.addEventListener(eventName, requestScripts, { once: true, passive: true });
-  });
-  fallbackTimer = window.setTimeout(requestScripts, 3500);
-})(window, document);
-</script>
-<!-- End Google Tag Manager -->
 <title>UniSplit — App para dividir gastos entre roomies y amigos (Android)</title>
 <meta name="description" content="UniSplit es una app para Android para dividir gastos de salidas y del apartamento entre roomies y amigos; organiza balances y guarda datos en tu celular.">
 <link rel="canonical" href="https://landingpageunisplit.netlify.app/" />
@@ -65,11 +17,13 @@
 <meta property="og:image" content="https://landingpageunisplit.netlify.app/assets/og-unisplit.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="UniSplit, app para dividir gastos entre roomies y amigos">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="UniSplit — App para dividir gastos entre roomies y amigos (Android)">
 <meta name="twitter:description" content="App para Android para dividir gastos de salidas y del apartamento entre roomies y amigos. Calcula transferencias mínimas y guarda datos en tu celular.">
 <meta name="twitter:image" content="https://landingpageunisplit.netlify.app/assets/og-unisplit.jpg">
+<meta name="twitter:image:alt" content="UniSplit, app para dividir gastos entre roomies y amigos">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,25 +35,20 @@
       "inLanguage": "es-CO",
       "publisher": {
         "@id": "https://landingpageunisplit.netlify.app/#organization"
-      },
-      "sameAs": [
-        "https://github.com/ANDRESDLRG2007/Division-grupal",
-        "https://www.instagram.com/andres_8dlrg/"
-      ]
+      }
     },
     {
       "@type": "Organization",
       "@id": "https://landingpageunisplit.netlify.app/#organization",
       "name": "UniSplit",
       "url": "https://landingpageunisplit.netlify.app/",
-      "email": "soporte@unisplit.app",
-      "telephone": "+57 310 123 4567",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Cra. 7 # 15-20",
-        "addressLocality": "Bogotá",
-        "addressCountry": "CO"
-      }
+      "logo": "https://landingpageunisplit.netlify.app/assets/logo-header.webp",
+      "email": "cristian.rueg@uniagustiniana.edu.co",
+      "telephone": "+57 302 528 1624",
+      "sameAs": [
+        "https://github.com/ANDRESDLRG2007/Division-grupal",
+        "https://www.instagram.com/andres_8dlrg/"
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -136,7 +85,7 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
-        "email": "soporte@unisplit.app",
+        "email": "cristian.rueg@uniagustiniana.edu.co",
         "availableLanguage": "es"
       }
     },
@@ -257,10 +206,10 @@ a{text-decoration:none;color:inherit}
 @media(max-width:600px){.benefits{min-height:clamp(1280px,calc(2010px - 122vw),1620px)}.benefits__grid{grid-template-columns:1fr}}
 .app-summary{padding:48px 0;background:#fff}.app-summary__content{max-width:900px}.app-summary h2{margin:0 0 12px;font-size:30px;text-align:center}.app-summary p{margin:0;font-size:16px;line-height:1.75}
 </style>
-<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="styles.css"></noscript>
-<link rel="preload" href="animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="animations.css"></noscript>
+<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+<link rel="stylesheet" href="animations.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="animations.css"></noscript>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -271,9 +220,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="header">
   <div class="container header__inner">
     <a href="/" class="logo" aria-label="UniSplit — Inicio">
-      <img src="assets/logo-header-180.webp" srcset="assets/logo-header-180.webp 1x, assets/logo-header.webp 2x" class="logo-img" width="180" height="92" fetchpriority="high" alt="Logotipo de UniSplit">
+      <img src="assets/logo-header-180.webp" srcset="assets/logo-header-180.webp 1x, assets/logo-header.webp 2x" class="logo-img" width="172" height="88" fetchpriority="high" alt="Logotipo de UniSplit">
     </a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegación principal">
       <a href="#beneficios">Beneficios</a>
       <a href="#quienes-somos">Quiénes somos</a>
       <a href="#faq">Preguntas</a>
@@ -289,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container hero__inner">
       <div class="hero__copy">
         <span class="badge">Hecho por y para universitarios</span>
-        <h1>Cuentas claras entre roomies, parches y una ruleta que decide.</h1>
+        <h1>Divide gastos entre roomies y amigos: cuentas claras y una ruleta que decide.</h1>
         <p>UniSplit divide el arriendo, los servicios y las salidas del parche — y cuando nadie quiere pagar, deja que la ruleta elija por ustedes.</p>
         <div class="hero__actions">
           <a href="#formulario" id="btn-cta-principal" class="btn btn--green">Descargar UniSplit gratis</a>
@@ -303,6 +252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container app-summary__content">
       <h2 id="app-summary-title">¿Qué es UniSplit?</h2>
       <p>UniSplit es una aplicación móvil para Android pensada para universitarios, roomies y grupos de amigos. Ayuda a dividir gastos de salidas y del apartamento, calcula las transferencias mínimas y ofrece una ruleta para decidir quién paga. No requiere crear una cuenta: los grupos, gastos y saldos se guardan en el celular. La app es gratis y UniSplit es un proyecto académico de la Universitaria Agustiniana.</p>
+      <p style="margin-top:12px">Lee nuestras guías: <a href="como-dividir-el-arriendo-entre-roomies.html"><u>cómo dividir el arriendo entre roomies</u></a> y <a href="como-dividir-la-cuenta-en-una-salida.html"><u>cómo dividir la cuenta en una salida</u></a>.</p>
     </div>
   </section>
 
@@ -584,23 +534,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </main>
 
-<section id="ai-context" style="padding: 40px 20px; background-color: #f8f9fa; color: #495057; font-size: 0.85rem; border-top: 1px solid #e9ecef;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h3 style="font-size: 1rem; margin-bottom: 15px;">Acerca de UniSplit — Declaración de propósito</h3>
-    <p>UniSplit es una aplicación para Android desarrollada como proyecto académico por Cristian Andrés De La Rue García, estudiante de la Universitaria Agustiniana. Ayuda a estudiantes universitarios, roomies y grupos de amigos a dividir gastos del apartamento y salidas, calcular transferencias mínimas y decidir quién paga con una ruleta. No requiere crear una cuenta: los grupos, gastos y saldos se guardan en el dispositivo.</p>
-
-    <h3 style="font-size: 1rem; margin-top: 25px; margin-bottom: 15px;">Guía de despliegue y arquitectura (para desarrolladores)</h3>
-    <p>Esta landing page está construida con HTML5, CSS3 y JavaScript vanilla y se publica en Netlify. Para desplegar una copia, clona el <a href="https://github.com/ANDRESDLRG2007/landing-page---unisplit">repositorio de la landing page</a>, conecta el repositorio a Netlify y publica la raíz del proyecto como sitio estático, sin comando de build. El formulario se integra con HubSpot mediante los identificadores de portal y formulario definidos en el HTML; no se configura con variables de entorno en esta página.</p>
-
-    <h3 style="font-size: 1rem; margin-top: 25px; margin-bottom: 15px;">Preguntas frecuentes y solución de problemas</h3>
-    <ul style="padding-left: 20px;">
-      <li><strong>¿Los gastos no se sincronizan entre celulares?</strong> UniSplit guarda grupos, gastos y saldos en el dispositivo y no sincroniza esos datos entre teléfonos. Comprueba que estás usando el dispositivo donde creaste el grupo.</li>
-      <li><strong>¿No puedes instalar la app en Android?</strong> Descarga el APK desde el botón de esta página. Si Android lo solicita, permite temporalmente la instalación de aplicaciones desde esa fuente y confirma que el archivo provenga del repositorio oficial de UniSplit.</li>
-      <li><strong>¿El formulario de contacto no carga o no se envía?</strong> El formulario depende de HubSpot y de una conexión a internet. Permite la carga de scripts y comprueba que un bloqueador de contenido no esté impidiendo su funcionamiento. Si el problema continúa, escribe a <a href="mailto:soporte@unisplit.app">soporte@unisplit.app</a>.</li>
-    </ul>
-  </div>
-</section>
-
 <!-- 9. FOOTER -->
 <footer class="footer">
   <div class="container footer__inner">
@@ -623,9 +556,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="footer__col">
       <span class="footer__col-title">Contacto</span>
-      <a href="mailto:soporte@unisplit.app">soporte@unisplit.app</a>
-      <a href="tel:+573101234567">+57 310 123 4567</a>
-      <address>Cra. 7 # 15-20, Bogotá, Colombia.</address>
+      <a href="mailto:cristian.rueg@uniagustiniana.edu.co">Correo</a>
+      <a href="https://wa.me/573025281624">WhatsApp</a>
       <a href="https://www.instagram.com/andres_8dlrg/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://github.com/ANDRESDLRG2007/Division-grupal">GitHub</a>
     </div>
@@ -635,7 +567,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="terminos.html">Términos y Condiciones</a>
     </div>
   </div>
-  <div class="container footer__copy">© 2026 UniSplit. Todos los derechos reservados. Desarrollado por Andrés De la Rue</div>
+  <div class="container footer__copy">© 2026 UniSplit. Todos los derechos reservados. Desarrollado por Cristian Andrés De La Rue García</div>
 </footer>
 
 <div id="download-modal" class="download-modal" role="dialog" aria-modal="true" aria-labelledby="download-modal-title" aria-describedby="download-modal-message" hidden>
@@ -660,6 +592,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.dataLayer.push({ event: 'formulario_enviado' });
   });
 </script>
+
+<!-- Google Tag Manager -->
+<script>
+(function (window, document) {
+  var events = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
+  var requested = false;
+  var loaded = false;
+  var fallbackTimer;
+
+  function injectScripts() {
+    if (loaded) return;
+    loaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+    [
+      'https://www.googletagmanager.com/gtm.js?id=GTM-WFJHMZXH',
+      'https://js.hsforms.net/forms/embed/52180089.js'
+    ].forEach(function (src) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      document.head.appendChild(script);
+    });
+  }
+
+  function requestScripts() {
+    if (requested) return;
+    requested = true;
+    window.clearTimeout(fallbackTimer);
+    events.forEach(function (eventName) {
+      window.removeEventListener(eventName, requestScripts);
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', injectScripts, { once: true });
+    } else {
+      injectScripts();
+    }
+  }
+
+  events.forEach(function (eventName) {
+    window.addEventListener(eventName, requestScripts, { once: true, passive: true });
+  });
+  fallbackTimer = window.setTimeout(requestScripts, 3500);
+})(window, document);
+</script>
+<!-- End Google Tag Manager -->
 
 <script src="script.js" defer></script>
 <script src="showcase.js" defer></script>
