@@ -525,6 +525,68 @@ a {
   max-height: 240px;
 }
 
+/* About and legal pages */
+.about-us {
+  padding: 80px 0;
+  background: var(--blanco);
+}
+
+.about-us__details {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--gris);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.about-us__details p {
+  margin: 0;
+}
+
+.about-us__details p + p {
+  margin-top: 12px;
+}
+
+.legal-page {
+  min-height: 60vh;
+  padding: 64px 0 80px;
+}
+
+.legal-page__content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  background: var(--blanco);
+}
+
+.legal-page__content h1 {
+  margin: 0 0 8px;
+  font-size: 38px;
+}
+
+.legal-page__content h2 {
+  margin: 32px 0 8px;
+  font-size: 22px;
+}
+
+.legal-page__content p,
+.legal-page__content li {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.legal-page__content ul {
+  padding-left: 24px;
+}
+
+.legal-page__updated {
+  margin: 0 0 28px;
+  opacity: 0.65;
+}
+
 /* Footer */
 .footer {
   background: #0B0930;
@@ -699,6 +761,10 @@ a {
 @media (max-width: 900px) {
   .nav a:not(.btn) {
     display: none;
+  }
+
+  .legal-page__content {
+    padding: 28px 24px;
   }
 
   .hero__inner {
