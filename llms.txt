@@ -1,0 +1,17 @@
+# UniSplit
+UniSplit es una aplicación móvil para Android que ayuda a dividir gastos de salidas y del apartamento entre roomies y amigos.
+Organiza gastos, consulta balances, calcula transferencias mínimas y ofrece una ruleta para decidir quién paga.
+
+## Páginas
+- Inicio: https://landingpageunisplit.netlify.app/
+- Cómo dividir el arriendo entre roomies: https://landingpageunisplit.netlify.app/como-dividir-el-arriendo-entre-roomies.html
+- Cómo dividir la cuenta en una salida: https://landingpageunisplit.netlify.app/como-dividir-la-cuenta-en-una-salida.html
+- Privacidad: https://landingpageunisplit.netlify.app/privacidad.html
+- Términos: https://landingpageunisplit.netlify.app/terminos.html
+
+## Autor y contacto
+- Autor: Cristian Andrés De La Rue García
+- Correo: cristian.rueg@uniagustiniana.edu.co
+- WhatsApp: https://wa.me/573025281624
+- GitHub: https://github.com/ANDRESDLRG2007/Division-grupal
+- Instagram: https://www.instagram.com/andres_8dlrg/

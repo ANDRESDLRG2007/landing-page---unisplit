@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://andresdlrg2007.github.io/landing-page---unisplit/</loc>
+    <loc>https://landingpageunisplit.netlify.app/</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://andresdlrg2007.github.io/landing-page---unisplit/privacidad.html</loc>
+    <loc>https://landingpageunisplit.netlify.app/privacidad.html</loc>
     <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://andresdlrg2007.github.io/landing-page---unisplit/terminos.html</loc>
+    <loc>https://landingpageunisplit.netlify.app/terminos.html</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://landingpageunisplit.netlify.app/como-dividir-el-arriendo-entre-roomies.html</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://landingpageunisplit.netlify.app/como-dividir-la-cuenta-en-una-salida.html</loc>
     <lastmod>2026-11-08</lastmod>
   </url>
 </urlset>

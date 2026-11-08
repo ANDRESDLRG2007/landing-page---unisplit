@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
-Sitemap: https://andresdlrg2007.github.io/landing-page---unisplit/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://landingpageunisplit.netlify.app/sitemap.xml
